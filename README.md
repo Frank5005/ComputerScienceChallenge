@@ -13,6 +13,7 @@ This function converts a Roman numeral string into an integer. The algorithm pro
   - n stores the length of the input string s.
   - arr is a character array copy of s.
   - i is the iterator used to process characters.
+  
   2.2 Iterate through the string:
   - If the current character and the next form a subtractive pair (like "IV", "IX", etc.), add the special value and move forward by two positions.
   - Otherwise, just add the normal value and move forward by one position.
