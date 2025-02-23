@@ -30,14 +30,18 @@ Cons
 1. Approach
 This function reverses a singly linked list using a recursive approach. Instead of iterating through the list and reversing the links step by step, it relies on recursion to reach the last node and then reconstructs the list in reverse order.
 2. Steps
-  2.1 Base Case:
+
+   2.1 Base Case:
   - If head is nullptr (empty list) or if head->next is nullptr (only one node in the list), return head because there’s nothing to reverse.
+  
   2.2 Recursive Call:
   - Recursively call reverseList(head->next) until it reaches the last node.
   - This last node becomes the new head of the reversed list.
+  
   2.3 Reverse the Links:
   - The head->next->next = head; statement makes the next node point back to head, effectively reversing the link.
   - The head->next = NULL; statement ensures that the original head node becomes the new tail of the reversed list.
+  
   2.4 Return the new head (rest):
   - The recursion unwinds, returning the last node (now the first node in the reversed list) as the new head.
 3. Computational Complexity
@@ -54,11 +58,14 @@ This function generates all subsets (power set) of a given array using backtrack
 - Exclude the current element and move to the next.
 By recursively following these choices, the algorithm generates all possible subsets.
 2. Steps
+
   2.1 Base Case:
   - If the index i reaches the size of nums, store the current subset (vec) in solve and return.
+  
   2.2 Recursive Steps:
   - Include nums[i] in vec and make a recursive call with i+1.
   - Exclude nums[i] by removing it (vec.pop_back()) and making another recursive call with i+1.
+  
   2.3 Final Result:
   - The recursive tree explores all possibilities, and solve stores all subsets, which is then returned.
 3. Computational Complexity
@@ -78,12 +85,16 @@ The function reverses the words in a given string while removing extra spaces. I
 - Reversing the order of words.
 - Reconstructing the string from the reversed words.
 2. Steps
+
   2.1 Remove extra spaces:
   - Use istringstream iss(s) to automatically split the input string into words, removing extra spaces.
+  
   2.2 Store words in a vector:
   - Extract words using iss >> word and push them into words.
+  
   2.3 Reverse the order of the words:
   - Use reverse(words.begin(), words.end()); to flip the order of words in place.
+  
   2.4 Reconstruct the string:
   - Use ostringstream to build the final string efficiently.
   - Append spaces only between words, avoiding leading or trailing spaces.
