@@ -115,18 +115,23 @@ Cons
 This function reverses a sublist of a singly linked list between two given positions (left and right).
 Instead of reversing the entire list, it modifies only the portion between left and right while keeping the rest of the list unchanged.
 2. Steps
-  2.1 Edge Case Handling:
+
+   2.1 Edge Case Handling:
   - If left == right, return the head as no reversal is needed.
+  
   2.2 Traverse to the left position
   - Use a loop to move prev and current to the left-th node.
   - prev points to the node before the sublist, and current points to the first node of the sublist.
+  
   2.3 Reverse the sublist from left to right:
   - Use a loop to reverse the links within the sublist.
   - prev becomes the new head of the reversed sublist.
   - current moves forward in the list.
+  
   2.4 Reconnect the reversed sublist:
   - If there was a node before left, reconnect it to the new head of the reversed sublist (prev).
   - The original head of the sublist (tail) should point to current (the node after right).
+  
   2.5 Return the modified list.
 3. Computational Complexity
 Time Complexity: 𝑂(𝑛)
@@ -146,10 +151,13 @@ This function rotates a given 𝑛×𝑛 matrix 90° clockwise in-place. Instead
 - Flip Vertically: Swap elements across the horizontal middle axis.
 - Transpose the Matrix: Swap elements across the main diagonal.
 2. Steps
+
   2.1 Find the matrix size (n).
+
   2.2 Flip the matrix vertically:
   - Swap the first row with the last, the second row with the second-last, etc.
   - Use a loop from 0 to 𝑛/2 and swap elements at matrix[i][j] with matrix[n - 1 - i][j].
+
   2.3 Transpose the matrix (swap across the main diagonal):
   - Swap matrix[i][j] with matrix[j][i] for all elements above the diagonal.
   - This effectively rotates the matrix by 90°.
@@ -168,11 +176,14 @@ Cons
 This function finds the shortest palindrome by adding the minimum number of characters at the beginning of the given string.
 The key idea is to find the longest palindromic prefix in the string and then reverse the remaining suffix and append it in front.
 2. Steps
+
   2.1 Reverse the given string (rev) and compare it with the original:
   - If s == rev, then s is already a palindrome, so return s.
+  
   2.2 Find the longest prefix of s that is a palindrome:
   - Compare s.substr(0, i) with rev.substr(n - i) from the end.
   - The largest i for which they match gives the longest palindromic prefix.
+  
   2.3 Reverse the remaining suffix (s.substr(longestPalPrefix)) and add it in front:
   - This ensures we get the shortest palindrome.
 3. Computational Complexity
@@ -190,12 +201,15 @@ Cons
 1. Approach
 The goal is to find the length of the longest valid parentheses substring in a given string. This solution uses a stack to track unmatched parentheses positions.
 2. Steps
+
   2.1 Initialize a stack (word) and push -1 as a base index to handle edge cases.
+  
   2.2 Iterate through the string:
   - If s[i] == '(', push the index i onto the stack.
   - If s[i] == ')', pop the top index from the stack:
     - If the stack becomes empty, push i (this acts as a new base).
     - Otherwise, calculate the length of the valid substring as i - word.top().  
+  
   2.3 Return the maximum valid substring length found (solve).
 3. Computational Complexity
 Time Complexity: 𝑂(𝑛)
