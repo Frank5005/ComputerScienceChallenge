@@ -7,7 +7,7 @@ This function converts a Roman numeral string into an integer. The algorithm pro
 - Certain numeral pairs represent subtractive notation (e.g., IV = 4 instead of 6).
 - The function checks for these subtractive cases and adds or subtracts accordingly.
 2. Steps
-  2.1 Initialize Variables:
+2.1 Initialize Variables:
   - solve stores the final integer value.
   - n stores the length of the input string s.
   - arr is a character array copy of s.
